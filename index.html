@@ -5,39 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Welcome to my website!</title>
 <style>
-  body {
+  html, body {
     margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     background: white;
+  }
+  body {
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+  }
+  .container {
+    flex: 1 1 auto;
+    display: flex;
+    height: auto; /* avoid fixed 100vh */
   }
   nav {
     width: 200px;
     background: #f0f0f0;
-    padding: 0; /* no padding for flush edges */
+    padding: 0; /* flush edges */
     box-sizing: border-box;
     border-right: 1px solid #ccc;
     display: flex;
     flex-direction: column;
   }
   nav button {
-    flex: none;             /* buttons take only needed height */
-    width: 100%;            /* full width of sidebar */
-    padding: 15px 0;        /* vertical padding, no horizontal padding */
+    flex: none;
+    width: 100%;
+    padding: 15px 0;
     border: none;
     background: #ddd;
     cursor: pointer;
     font-size: 16px;
-    border-bottom: 1px solid #ccc; /* subtle divider */
-    margin: 0;              /* no outside margin */
+    border-bottom: 1px solid #ccc;
+    margin: 0;
     text-align: center;
   }
   nav button:hover {
     background: #bbb;
   }
   main {
-    flex: 1;
+    flex: 1 1 auto;
     padding: 30px;
     box-sizing: border-box;
   }
@@ -48,32 +58,35 @@
 </head>
 <body>
 
-<nav>
-  <button onclick="openSite('https://vadimcanplay.github.io/androretro.com/')">AndroRetro</button>
-  <button onclick="openSite('https://vadimcanplay.github.io/discord-memes/')">Discord Memes</button>
-  <button onclick="openSite('https://vadimcanplay.github.io/WinGames/')">WinGames</button>
-  <button onclick="openSite('https://vadimcanplay.github.io/WinApps/')">WinApps</button>
-  <button onclick="openSite('https://vadimcanplay.github.io/TempPad/')">TempPad</button>
-  <button onclick="openSite('https://vadimcanplay.github.io/escape-your-browser/')">Escape Your Browser</button>
-  <button onClick="openSite('https://HypixleStore.github.io')">Hypixle Store</button>
-  <button onClick="openSite('https://github.com/VadimCanPlay/')">My GitHub</button>
-</nav>
+<div class="container">
+  <nav>
+    <button onclick="openSite('https://vadimcanplay.github.io/androretro.com/')">AndroRetro</button>
+    <button onclick="openSite('https://vadimcanplay.github.io/discord-memes/')">Discord Memes</button>
+    <button onclick="openSite('https://vadimcanplay.github.io/WinGames/')">WinGames</button>
+    <button onclick="openSite('https://vadimcanplay.github.io/WinApps/')">WinApps</button>
+    <button onclick="openSite('https://vadimcanplay.github.io/TempPad/')">TempPad</button>
+    <button onclick="openSite('https://vadimcanplay.github.io/escape-your-browser/')">Escape Your Browser</button>
+    <button onclick="openSite('https://HypixleStore.github.io')">Hypixle Store</button>
+    <button onclick="openSite('https://github.com/VadimCanPlay/')">My GitHub</button>
+  </nav>
+
+  <main id="content">
+    <h1>About Me</h1>
+    <p>Hey! I’m Vadym, also knows as ItzFrillz or VadimCanPlay, welcome to my personal hub page. Here you’ll find links to my other websites and some info about me.</p>
+    <p>The thing i most like is programming! Thats how you are able to see this page right now. I know Lua, HTML, CSS, C# and Batch.</p>
+    <p>My favorite thing to do is playing games (duh) but mostly Roblox. I also play Minecraft!</p>
+    <p>If you wanna hit me up or make something together, here are my socials:</p>
+    <p>Discord: 321_lol_123</p>
+    <p>Telegram: @VadimPro96</p>
+    <p>Roblox Username: YT_Vadim116 (ban for 6 months) / Alt account: ItzFrillz</p>
+  </main>
+</div>
 
 <script>
-    function openSite(url) {
-      window.open(url, '_blank');
-    }
+  function openSite(url) {
+    window.open(url, '_blank');
+  }
 </script>
 
-<main id="content">
-  <h1>About Me</h1>
-  <p>Hey! I’m Vadym, also knows as ItzFrillz or VadimCanPlay, welcome to my personal hub page. Here you’ll find links to my other websites and some info about me.</p>
-  <p>The thing i most like is programming! Thats how you are able to see this page right now. I know Lua, HTML, CSS, C# and Batch.</p>
-  <p>My favorite thing to do is playing games (duh) but mostly Roblox. I also play Minecraft!
-  <p>If you wanna hit me up or make something together, here are my socials:</p>
-  <p>Discord: 321_lol_123</p>
-  <p>Telegram: @VadimPro96</p>
-  <p>Roblox Username: YT_Vadim116 (ban for 6 months) / Alt account: ItzFrillz</p>
-</main>
 </body>
 </html>
